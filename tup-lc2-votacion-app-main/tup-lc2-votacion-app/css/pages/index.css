@@ -1,0 +1,158 @@
+
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#div-nav {
+    display: flex;
+    align-items: center;
+}
+
+#div-nav p {
+    color: white;
+    margin-right: 20px;
+    margin-left: 10px;
+}
+
+#paso-btn {
+    background-color: var(--magenta);
+    border-radius: 5px;
+    text-align: center;
+    padding: 5px;
+    margin-right: 10px;
+    border: none;
+}
+
+#paso-btn a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 30px 10px 30px;
+
+}
+
+#paso-btn:hover {
+    transition: 0.5s ease;
+    background-color:darkmagenta;
+}
+
+#generales-btn {
+    background-color: var(--celeste);
+    border-radius: 5px;
+    text-align: center;
+    padding: 5px;
+    margin-right: 10px;
+    border: none;
+}
+
+#generales-btn a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 30px 10px 30px;
+
+}
+
+#generales-btn:hover {
+    transition: 0.5s ease;
+    background-color:darkslateblue;
+}
+
+#informes-btn {
+    background-color: transparent;
+    border-radius: 25px;
+    text-align: center;
+    padding: 5px;
+    margin-right: 5px;
+    border: solid;
+    border-width: 1px;
+    border-color: white;
+}
+
+#informes-btn a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 30px 10px 30px;
+
+}
+
+#informes-btn:hover {
+    transition: 0.5s ease;
+    background-color:black;
+}
+
+.sec-titulo {
+    display: flex;
+    margin-top: 15px;
+}
+
+.texto-titulo {
+    width: 60%;
+    margin-right: 0px;
+    display: inline-block;
+}
+
+.texto-titulo h1 {
+    margin-left: 70px;
+}
+
+.texto-titulo p {
+    margin-left: 70px;
+}
+
+.imagen-electoral {
+    display: flex;
+}
+
+#sec-contenido h2, p {
+    margin-left: 70px;
+}
+
+.paso-generales-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+
+.paso-generales-buttons button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    border: none;
+    margin: auto 20px;
+    width: 400px;
+    padding: 0;
+}
+
+.paso-generales-buttons button a {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: 28px;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    padding: 10px 30px;
+}
+
+
+.paso-btn {
+    background-color: var(--magenta);
+}
+
+.generales-btn {
+    background-color: var(--celeste);
+}
+
+.paso-generales-buttons button:hover {
+    transition: 0.5s;
+    filter: brightness(0.8);
+    cursor: pointer;
+}
+
+
