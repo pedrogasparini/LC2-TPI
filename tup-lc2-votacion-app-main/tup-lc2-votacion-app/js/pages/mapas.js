@@ -1,5 +1,5 @@
 function returnMapas() { //la funcion
-    const mapasprovincias = [
+const mapasprovincias = [
         //representa argentina
         ``,
         //Ciudad Autónoma de Buenos Aires
@@ -186,7 +186,7 @@ function returnMapas() { //la funcion
                 d="M166 125L160 121L154 114L139 104L136 98L129 92L122 78L120 79L114 76L114 73L118 67L120 67L121 69L121 67L113 54L113 140L114 138L118 138L120 136L132 139L141 138L161 146L163 143L172 143L173 140L177 140L180 142L185 139L185 141L188 140L188 138L190 137L189 135L192 130L181 130L170 128L167 126z">
             </path>
         </svg>`,
-    ]
+]
 
     return mapasprovincias //devuelvo las provincias nomas
 }

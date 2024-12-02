@@ -56,50 +56,56 @@
     font-size: 13px;
 
 }
-#boton-generales:hover, #boton-paso:hover {
-    background-color: var(--gris-claro);
-}
-#boton-paso {
+#generales-btn {
+    background-color: var(--celeste);
     border-radius: 5px;
-    width: 115px;
-    margin-right: 5px;
-    height: 32px;
-    background-color: var(--magenta);
-    border: 0px;
+    text-align: center;
+    padding: 5px;
+    margin-right: 10px;
+    border: none;
+}
+#generales-btn:hover {
+    transition: 0.5s ease;
+    background-color:darkslateblue;
 }
 
-#boton-paso a, #boton-generales a {
+
+#paso-btn {
+    background-color: var(--magenta);
+    border-radius: 5px;
+    text-align: center;
+    padding: 5px;
+    margin-right: 10px;
+    border: none;
+}
+
+#paso-btn:hover {
+    transition: 0.5s ease;
+    background-color:darkmagenta;
+}
+
+#paso-btn a, #generales-btn a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 30px 10px 30px;
+}
+
+
+
+#boton-inicio {
+    background-color: var(--gris-claro);
+    font-size: 12px;
+    color: white;
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 10px;
     text-decoration: none;
 }
 
-#boton-generales {
-    border-radius: 5px;
-    width: 115px;
-    margin-right: 5px;
-    height: 32px;
-    background-color: var(--fondo-Cabecera);
-    border: 0px;
+#boton-inicio:hover {
+    transition: 0.5s;
+    filter: brightness(0.9);
 }
-
-
-#boton-inicio-menu {
-    border-radius: 5px;
-    background-color: var(--gris-claro);
-    padding: 8px;
-    font-size: 10px;
-    text-align: center;
-    padding-left: 30px;
-    padding-right: 30px;
-}
-#boton-inicio-menu a {
-    font-size: 10px;
-    font: #FFF;
-    text-align: center;
-}
-#boton-inicio-menu:hover {
-    background-color: var(--textos);
-}
-
 
 
 
@@ -159,9 +165,9 @@ svg{
 .datos {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
-    padding-left: 20px;
-    padding-right: 20px;
+    flex-direction: column;
+    padding-left: 100px;
+    padding-right: 100px;
 }
 #mesas-escrutadas {
     display: flex;

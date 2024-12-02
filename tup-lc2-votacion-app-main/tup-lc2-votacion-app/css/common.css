@@ -45,7 +45,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: white;
-    
+
 }
 
 
@@ -82,7 +82,7 @@ footer {
     padding: 10px;
     align-items: center;
     background-color: var(--fondo-Footer);
-    
+
 }
 
 footer img {
@@ -92,7 +92,7 @@ footer img {
 }
 
 .icons-footer {
-    
+
     margin-left: 60px;
     display: flex;
 }
@@ -102,7 +102,7 @@ footer img {
 }
 
 .texto-footer p {
-    
+
     margin-left: 30px;
     margin-right: 60px;
     color: var(--texto-footer);
@@ -111,4 +111,45 @@ footer img {
 #terminos-y-condiciones {
     color: white;
     text-decoration: none;
+}
+
+#sec-messages {
+    /*display: none;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#sec-messages p {
+    width: 400px;
+    margin: 20px auto;
+    padding: 15px;
+    border-radius: 10px;
+    color: #FFffFF;
+    font-size: 12px;
+    text-align: center;
+    font-weight: 200;
+}
+
+#texto-verde {
+    background-color: var(--mensaje-usuario-verde);
+    visibility: hidden;
+    font-family: sans-serif;
+    color: black;
+}
+
+#texto-rojo {
+    background-color: var(--mensaje-usuario-rojo);
+    visibility: hidden;
+    font-family: sans-serif;
+    color: black;
+}
+
+#texto-amarillo {
+    background-color: var(--mensaje-usuario-amarillo);
+    visibility: hidden;
+    position: absolute;
+    font-family: sans-serif;
+    color: black;
 }

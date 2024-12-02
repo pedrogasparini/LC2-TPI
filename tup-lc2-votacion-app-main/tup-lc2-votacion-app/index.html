@@ -10,8 +10,19 @@
     <link rel="stylesheet" href="css/common.css" />
     <link rel="stylesheet" href="css/pages/index.css">
     <link rel="shortcut icon" href="img/icons/favicon-16x16.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fontawesome/5.15.4/css/all.min.css"
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script>
+        let bandera = false
+
+        if(!bandera && !localStorage.getItem('informes')){
+            let informes = []; //para guardar los informes que agregue el usuario
+            localStorage.setItem('informes', JSON.stringify(informes));
+            bandera = true
+            console.log("arreglo creado")
+        }
+       
+        //se supone que el usario ingresa por esta pagina por lo que se inicializa aca
+        //se realizo de esta forma para que si el usuario pasa por el index no se redeclare y se pierdan los informes del mismo
+    </script>
 
 
 </head>

@@ -5,15 +5,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sistema de Publicación de Resultados Electorales</title>
-    <link rel="shortcut icon" type="image/png" href="img/icons/favicon-16x16.png">
-    <script src="https://kit.fontawesome.com/2e7d0dec67.js" crossorigin="anonymous"></script>
 
     <!-- Estilos CSS -->
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/pages/generales.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-        crossorigin="anonymous" eferrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous" eferrerpolicy="no-referrer" />
     <script src="js/pages/generales.js" defer></script>
+    <script src="js/pages/mapas.js"></script>
 </head>
 
 
@@ -21,42 +19,45 @@
     <header>
         <!--Barra de logo portal-->
         <div class="header-page">
-            <a href="index.html"></a>
-            <img src="img/icons/Logo_DINE_negativo.a88f983e.png" alt="logo" class="logo">
+            <a href="index.html">
+                <img src="img/Logo_DINE_negativo.png" alt="logo" class="logo">
+            </a>
         </div>
 
 
-            <nav>
-                <div>
-                    <select name="select" class="select" id="select-anio" onchange="FuncionComboCargo()" style="width: 100px;">
-                        <option disabled selected value="">Año</option>
-                    </select>
-    
-                    <select name="select" class="select" id="select-cargo" onchange="FuncionComboDistrito()" style="width: 150px;">
-                        <option disabled selected value="">Cargo</option>
-                    </select>
-    
-                    <select name="select" class="select" id="select-distrito" style="width: 150px;" onchange="FuncionComboSeccion()">
-                        <option disabled selected value="">Distrito</option>
-                    </select>
-    
-                    <select name="select" class="select" id="select-seccion" style="width: 150px;">
-                        <option disabled selected value="">Seccion</option>
-                    </select>
-    
-                    <button class="boton-filtrar" onclick="FuncionFiltrar()">
-                        <i class="fa fa-search"></i> FILTRAR
-                    </button>
-                    <button id="boton-informes">
-                        <a class="active" href="informes.html">INFORMES</a>
-                    </button>
-                </div>
-                <a class="active" href="index.html" id="boton-inicio">INICIO</a>
+        <nav>
+            <div>
+                <select name="seleccionable" class="seleccionable" id="select-anio" onchange="cargarOptionsCargo()"
+                    style="width: 100px;">
+                    <option disabled selected value="">Año</option>
+                </select>
+
+                <select name="seleccionable" class="seleccionable" id="select-cargo" onchange="cargarOptionsDistrito()"
+                    style="width: 150px;">
+                    <option disabled selected value="">Cargo</option>
+                </select>
+
+                <select name="seleccionable" class="seleccionable" id="select-distrito" style="width: 150px;"
+                    onchange="cargarOptionsSeccion()">
+                    <option disabled selected value="">Distrito</option>
+                </select>
+
+                <select name="seleccionable" class="seleccionable" id="select-seccion" style="width: 150px;">
+                    <option disabled selected value="">Seccion</option>
+                </select>
+
+                <button class="boton-filtrar" onclick="Filtrar()">
+                    <i class="fa fa-search"></i> FILTRAR
+                </button>
+                <button id="boton-informes">
+                    <a class="active" href="informes.html">INFORMES</a>
+                </button>
+            </div>
+            <a class="active" href="index.html" id="boton-inicio">INICIO</a>
 
 
-            </nav>
+        </nav>
 
-        </div>
     </header>
 
 
