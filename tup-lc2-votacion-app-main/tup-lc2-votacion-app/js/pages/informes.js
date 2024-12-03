@@ -1,7 +1,7 @@
 let informes = JSON.parse(localStorage.getItem('informes'));//transforma en array el tecto q recibe
 console.log(informes)
 
-if(informes.length > 0){//si hay informes guardados
+if(informes.length > 0){
 
     let informe = document.getElementById("informe")
     informe.innerHTML =
@@ -19,7 +19,7 @@ if(informes.length > 0){//si hay informes guardados
 
     for(var i = 0; i < informes.length; i++){
 
-        agrupaciones = ``//para no acumular
+        agrupaciones = ``
 
         for(var j = 0; j < informes[i].datos.valoresTotalizadosPositivos.length; j++){
             agrupaciones += 

@@ -1,6 +1,6 @@
 function returnMapas() { //la funcion
 const mapasprovincias = [
-        //representa argentina
+        // argentina
         ``,
         //Ciudad Autónoma de Buenos Aires
         `<svg height="210" width="800">
@@ -188,7 +188,7 @@ const mapasprovincias = [
         </svg>`,
 ]
 
-    return mapasprovincias //devuelvo las provincias nomas
+    return mapasprovincias 
 }
 
 

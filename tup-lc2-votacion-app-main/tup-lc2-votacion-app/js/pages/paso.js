@@ -1,28 +1,20 @@
 const tipoEleccion = 1;
 const tipoRecuento = 1;
 
-//retorna los mapas de mapas.js
 const provincias = returnMapas();
 
-/*  La variable colorPartidos almacena un arreglo de objetos que representan partidos políticos,
- donde cada objeto contiene el nombre del partido, su color principal y su color claro (para la barra de progreso). */
 let colorPartidos = coloresPartidos();
 
-//para guardar los datos filtrados y usarlos en agregar informe
 let datosInforme = "";
 
-//carteles de advertencias
 var textoVerde = document.getElementById("texto-verde")
 var textoAmarillo = document.getElementById("texto-amarillo")
 var textoRojo = document.getElementById("texto-rojo")
 
-//para poder cargar los distritos
 let datosCargos = 0;
 
-//para poder cargar las secciones
 let datosDistritos = 0;
 
-//almacenan los select para interactuar con el usuario
 let selectAnio = document.getElementById("select-anio");
 let selectCargo = document.getElementById("select-cargo");
 let selectDistrito = document.getElementById("select-distrito");
@@ -30,24 +22,20 @@ let selectSeccion = document.getElementById("select-seccion")
 
 async function cargarOptionsAnios() {
     try {
-        //get a la api y guardamos en la var promesa el resultado
         var promesa = await fetch("https://resultados.mininterior.gob.ar/api/menu/periodos");
         console.log(promesa);
 
-        /* si devuelve un status code de 200 (success) la respuesta se convierte en json y se
-        almacena en la var datos  */
         if (promesa.status == 200) {
             var datos = await promesa.json()
-            console.log("Años para seleccionar"); //responde [2023,2021,2019,2017,2015,2013,2011] al get de la promesa
+            console.log("Años para seleccionar"); 
             console.log(datos);
             
 
-            //se recorre la lista de datos con anio y se crea un option para cada año
             datos.forEach(anio => {
-                var option = document.createElement("option"); //se crea el option para el select
-                option.innerText = anio; // texto que va a tener el option
-                option.value = anio; //valor que va a tener el option
-                selectAnio.appendChild(option); //se agrega el option al select
+                var option = document.createElement("option"); 
+                option.innerText = anio; 
+                option.value = anio;
+                selectAnio.appendChild(option); 
             })
 
         }
@@ -62,7 +50,6 @@ async function cargarOptionsAnios() {
     }
 }
 
-//invocamos la funcion
 cargarOptionsAnios()
 
 async function cargarOptionsCargo() {
@@ -82,16 +69,12 @@ async function cargarOptionsCargo() {
             console.log("Cargos de ese año en distintas elecciones:");
             console.log(datos);
 
-            /*Se recorren los datos para encontrar una elección cuyo IdEleccion coincida
-            con tipoEleccion. Si coincide, se asignan los cargos de esa elección
-            a datosCargos y se imprimen en la consola. */
             datos.forEach(eleccion => {
                 if (eleccion.IdEleccion === tipoEleccion) {
                     datosCargos = eleccion.Cargos;
                     console.log("Cargos del año seleccionado y en la eleccion situada");
                     console.log(datosCargos);
 
-                    //creacion de un option para cada cargo en la eleccion filtrada
                     eleccion.Cargos.forEach(cargo => {
                         var option = document.createElement("option");
                         option.innerText = cargo.Cargo;
@@ -130,7 +113,6 @@ function cargarOptionsDistrito() {
     LimpiarSelect(selectSeccion)
 
 
-    // Se recorre el arreglo datosCargos, que contiene información de los cargos y sus respectivos distritos.
     for ( i = 0; i < datosCargos.length; i++) {
         if (datosCargos[i].IdCargo == selectCargo.value) {
 
@@ -175,7 +157,7 @@ function cargarOptionsSeccion() {
 async function Filtrar() {
     try {
         if (selectAnio.value != "" && selectCargo.value != "" && selectDistrito.value != "" && validarSeccionArgentina()) {
-            //asignacion de parametros obligatorios para el get de los resultados a la api
+
             let anioEleccion = selectAnio.value;
             let categoriaId = selectCargo.value;
             let distritoId = selectDistrito.value;
@@ -222,7 +204,6 @@ document.getElementById("texto-amarillo").style.color = "black";
 document.getElementById("sec-titulo").style.visibility = "hidden";
 document.getElementById("sec-contenido").style.visibility = "hidden"
 
-//validar si se selecciona argentina
 function validarSeccionArgentina() {
     if (selectDistrito.value == 0) {
         return true
@@ -307,7 +288,7 @@ function cambiarAgrupacionesPoliticas(datos) {
             <hr>
             </div>`
 
-        if (datos.valoresTotalizadosPositivos[i].listas) { //si hay listas dentro del partido
+        if (datos.valoresTotalizadosPositivos[i].listas) {
             for (var j = 0; j < datos.valoresTotalizadosPositivos[i].listas.length; j++) {
                 htmlAgrupaciones +=
                     `<div class="div-agrupaciones">
@@ -345,7 +326,7 @@ function cambiarBarras(datos) {
     `<div class="title">Resumen de votos</div>
      <div class="grid">`
 
-    for (var i = 0; i < datos.valoresTotalizadosPositivos.length && i < 7; i++){ // menor a 7 para seguir la indicacion de no mas de 7 barras
+    for (var i = 0; i < datos.valoresTotalizadosPositivos.length && i < 7; i++){ 
         
         for (var x = 0; x < colorPartidos.length; x++){
             if(datos.valoresTotalizadosPositivos[i].nombreAgrupacion == colorPartidos[x].nombre){
@@ -380,28 +361,27 @@ function agregarInforme() {
 
     var informesLocal = localStorage.getItem('informes');
     console.log(informesLocal)
-    informesLocal = JSON.parse(informesLocal);//para transformarlo en un array
+    informesLocal = JSON.parse(informesLocal);
     var enInformes = false;
 
     for (var i = 0; i < informesLocal.length; i++) {
-        if (JSON.stringify(informesLocal[i]) === JSON.stringify(informe)) {// JSON.sringfy es para convertir el informe en cadena 
+        if (JSON.stringify(informesLocal[i]) === JSON.stringify(informe)) {
             enInformes = true;
             break;
         }
     }
 
-    if (!enInformes) {//si el informe no esta ya agregado
+    if (!enInformes) {
         informesLocal.push(informe);
 
-        // Guarda el arreglo actualizado en el localStorage
         localStorage.setItem('informes', JSON.stringify(informesLocal));
         console.log('informe agregado correctamente');
-        textVerde.innerText = "Informe agregado con exito!!"
-        textVerde.style.visibility = "visible"
+        textoVerde.innerText = "Informe agregado con exito!!"
+        textoVerde.style.visibility = "visible"
     } else {
 
-        textAmarillo.innerText = "No se puede agregar un informe ya existente"
-        textAmarillo.style.visibility = "visible"
+        textoAmarillo.innerText = "No se puede agregar un informe ya existente"
+        textoAmarillo.style.visibility = "visible"
         console.log('El JSON ya existe, no se puede agregar.');
     }
 }
